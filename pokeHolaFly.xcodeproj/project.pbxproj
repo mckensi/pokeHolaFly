@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C1E38A92B068D7F002FDD0C /* pokeHolaFlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38A82B068D7F002FDD0C /* pokeHolaFlyApp.swift */; };
+		8C1E38AB2B068D7F002FDD0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38AA2B068D7F002FDD0C /* ContentView.swift */; };
+		8C1E38AD2B068D80002FDD0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E38AC2B068D80002FDD0C /* Assets.xcassets */; };
+		8C1E38B02B068D80002FDD0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E38AF2B068D80002FDD0C /* Preview Assets.xcassets */; };
+		8C1E38BA2B068D81002FDD0C /* pokeHolaFlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38B92B068D81002FDD0C /* pokeHolaFlyTests.swift */; };
+		8C1E38C42B068D81002FDD0C /* pokeHolaFlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38C32B068D81002FDD0C /* pokeHolaFlyUITests.swift */; };
+		8C1E38C62B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38C52B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C1E38B62B068D81002FDD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C1E389D2B068D7F002FDD0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C1E38A42B068D7F002FDD0C;
+			remoteInfo = pokeHolaFly;
+		};
+		8C1E38C02B068D81002FDD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C1E389D2B068D7F002FDD0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C1E38A42B068D7F002FDD0C;
+			remoteInfo = pokeHolaFly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8C1E38A52B068D7F002FDD0C /* pokeHolaFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeHolaFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1E38A82B068D7F002FDD0C /* pokeHolaFlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyApp.swift; sourceTree = "<group>"; };
+		8C1E38AA2B068D7F002FDD0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8C1E38AC2B068D80002FDD0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C1E38AF2B068D80002FDD0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8C1E38B52B068D81002FDD0C /* pokeHolaFlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokeHolaFlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1E38B92B068D81002FDD0C /* pokeHolaFlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyTests.swift; sourceTree = "<group>"; };
+		8C1E38BF2B068D81002FDD0C /* pokeHolaFlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokeHolaFlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1E38C32B068D81002FDD0C /* pokeHolaFlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyUITests.swift; sourceTree = "<group>"; };
+		8C1E38C52B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C1E38A22B068D7F002FDD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E38B22B068D81002FDD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E38BC2B068D81002FDD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C1E389C2B068D7F002FDD0C = {
+			isa = PBXGroup;
+			children = (
+				8C1E38A72B068D7F002FDD0C /* pokeHolaFly */,
+				8C1E38B82B068D81002FDD0C /* pokeHolaFlyTests */,
+				8C1E38C22B068D81002FDD0C /* pokeHolaFlyUITests */,
+				8C1E38A62B068D7F002FDD0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C1E38A62B068D7F002FDD0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C1E38A52B068D7F002FDD0C /* pokeHolaFly.app */,
+				8C1E38B52B068D81002FDD0C /* pokeHolaFlyTests.xctest */,
+				8C1E38BF2B068D81002FDD0C /* pokeHolaFlyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C1E38A72B068D7F002FDD0C /* pokeHolaFly */ = {
+			isa = PBXGroup;
+			children = (
+				8C1E38A82B068D7F002FDD0C /* pokeHolaFlyApp.swift */,
+				8C1E38AA2B068D7F002FDD0C /* ContentView.swift */,
+				8C1E38AC2B068D80002FDD0C /* Assets.xcassets */,
+				8C1E38AE2B068D80002FDD0C /* Preview Content */,
+			);
+			path = pokeHolaFly;
+			sourceTree = "<group>";
+		};
+		8C1E38AE2B068D80002FDD0C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8C1E38AF2B068D80002FDD0C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8C1E38B82B068D81002FDD0C /* pokeHolaFlyTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C1E38B92B068D81002FDD0C /* pokeHolaFlyTests.swift */,
+			);
+			path = pokeHolaFlyTests;
+			sourceTree = "<group>";
+		};
+		8C1E38C22B068D81002FDD0C /* pokeHolaFlyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8C1E38C32B068D81002FDD0C /* pokeHolaFlyUITests.swift */,
+				8C1E38C52B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift */,
+			);
+			path = pokeHolaFlyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C1E38A42B068D7F002FDD0C /* pokeHolaFly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C1E38C92B068D81002FDD0C /* Build configuration list for PBXNativeTarget "pokeHolaFly" */;
+			buildPhases = (
+				8C1E38A12B068D7F002FDD0C /* Sources */,
+				8C1E38A22B068D7F002FDD0C /* Frameworks */,
+				8C1E38A32B068D7F002FDD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pokeHolaFly;
+			productName = pokeHolaFly;
+			productReference = 8C1E38A52B068D7F002FDD0C /* pokeHolaFly.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C1E38B42B068D81002FDD0C /* pokeHolaFlyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C1E38CC2B068D81002FDD0C /* Build configuration list for PBXNativeTarget "pokeHolaFlyTests" */;
+			buildPhases = (
+				8C1E38B12B068D81002FDD0C /* Sources */,
+				8C1E38B22B068D81002FDD0C /* Frameworks */,
+				8C1E38B32B068D81002FDD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C1E38B72B068D81002FDD0C /* PBXTargetDependency */,
+			);
+			name = pokeHolaFlyTests;
+			productName = pokeHolaFlyTests;
+			productReference = 8C1E38B52B068D81002FDD0C /* pokeHolaFlyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8C1E38BE2B068D81002FDD0C /* pokeHolaFlyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C1E38CF2B068D81002FDD0C /* Build configuration list for PBXNativeTarget "pokeHolaFlyUITests" */;
+			buildPhases = (
+				8C1E38BB2B068D81002FDD0C /* Sources */,
+				8C1E38BC2B068D81002FDD0C /* Frameworks */,
+				8C1E38BD2B068D81002FDD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C1E38C12B068D81002FDD0C /* PBXTargetDependency */,
+			);
+			name = pokeHolaFlyUITests;
+			productName = pokeHolaFlyUITests;
+			productReference = 8C1E38BF2B068D81002FDD0C /* pokeHolaFlyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C1E389D2B068D7F002FDD0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8C1E38A42B068D7F002FDD0C = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					8C1E38B42B068D81002FDD0C = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 8C1E38A42B068D7F002FDD0C;
+					};
+					8C1E38BE2B068D81002FDD0C = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 8C1E38A42B068D7F002FDD0C;
+					};
+				};
+			};
+			buildConfigurationList = 8C1E38A02B068D7F002FDD0C /* Build configuration list for PBXProject "pokeHolaFly" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C1E389C2B068D7F002FDD0C;
+			productRefGroup = 8C1E38A62B068D7F002FDD0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C1E38A42B068D7F002FDD0C /* pokeHolaFly */,
+				8C1E38B42B068D81002FDD0C /* pokeHolaFlyTests */,
+				8C1E38BE2B068D81002FDD0C /* pokeHolaFlyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C1E38A32B068D7F002FDD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1E38B02B068D80002FDD0C /* Preview Assets.xcassets in Resources */,
+				8C1E38AD2B068D80002FDD0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E38B32B068D81002FDD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E38BD2B068D81002FDD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C1E38A12B068D7F002FDD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1E38AB2B068D7F002FDD0C /* ContentView.swift in Sources */,
+				8C1E38A92B068D7F002FDD0C /* pokeHolaFlyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E38B12B068D81002FDD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1E38BA2B068D81002FDD0C /* pokeHolaFlyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E38BB2B068D81002FDD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1E38C42B068D81002FDD0C /* pokeHolaFlyUITests.swift in Sources */,
+				8C1E38C62B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C1E38B72B068D81002FDD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C1E38A42B068D7F002FDD0C /* pokeHolaFly */;
+			targetProxy = 8C1E38B62B068D81002FDD0C /* PBXContainerItemProxy */;
+		};
+		8C1E38C12B068D81002FDD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C1E38A42B068D7F002FDD0C /* pokeHolaFly */;
+			targetProxy = 8C1E38C02B068D81002FDD0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8C1E38C72B068D81002FDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C1E38C82B068D81002FDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C1E38CA2B068D81002FDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"pokeHolaFly/Preview Content\"";
+				DEVELOPMENT_TEAM = U76E4PGKS7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.selvamatik.pokeHolaFly.pokeHolaFly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C1E38CB2B068D81002FDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"pokeHolaFly/Preview Content\"";
+				DEVELOPMENT_TEAM = U76E4PGKS7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.selvamatik.pokeHolaFly.pokeHolaFly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8C1E38CD2B068D81002FDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U76E4PGKS7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.selvamatik.pokeHolaFly.pokeHolaFlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokeHolaFly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pokeHolaFly";
+			};
+			name = Debug;
+		};
+		8C1E38CE2B068D81002FDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U76E4PGKS7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.selvamatik.pokeHolaFly.pokeHolaFlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokeHolaFly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pokeHolaFly";
+			};
+			name = Release;
+		};
+		8C1E38D02B068D81002FDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U76E4PGKS7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.selvamatik.pokeHolaFly.pokeHolaFlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pokeHolaFly;
+			};
+			name = Debug;
+		};
+		8C1E38D12B068D81002FDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U76E4PGKS7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.selvamatik.pokeHolaFly.pokeHolaFlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pokeHolaFly;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C1E38A02B068D7F002FDD0C /* Build configuration list for PBXProject "pokeHolaFly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C1E38C72B068D81002FDD0C /* Debug */,
+				8C1E38C82B068D81002FDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C1E38C92B068D81002FDD0C /* Build configuration list for PBXNativeTarget "pokeHolaFly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C1E38CA2B068D81002FDD0C /* Debug */,
+				8C1E38CB2B068D81002FDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C1E38CC2B068D81002FDD0C /* Build configuration list for PBXNativeTarget "pokeHolaFlyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C1E38CD2B068D81002FDD0C /* Debug */,
+				8C1E38CE2B068D81002FDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C1E38CF2B068D81002FDD0C /* Build configuration list for PBXNativeTarget "pokeHolaFlyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C1E38D02B068D81002FDD0C /* Debug */,
+				8C1E38D12B068D81002FDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C1E389D2B068D7F002FDD0C /* Project object */;
+}
