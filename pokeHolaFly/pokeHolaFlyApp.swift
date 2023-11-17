@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct pokeHolaFlyApp: App {
+    @StateObject var vm = PokemonsVM()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
         }
     }
 }

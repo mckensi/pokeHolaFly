@@ -3,14 +3,13 @@ import Foundation
 // MARK: - PokemonDto
 struct PokemonDto: Codable {
     let id: Int
-    let abilities: [Ability]
+    let abilities: [AbilityDto]
     let height: Int
-    let moves: [Move]
+    let moves: [MoveDto]
     let name: String
-    let species: Species
-    let sprites: Sprites
-    let stats: [Stat]
-    let types: [TypeElement]
+    let sprites: SpritesDto
+    let stats: [StatDto]
+    let types: [TypeElementDto]
     let weight: Int
 
     enum CodingKeys: String, CodingKey {
@@ -18,13 +17,13 @@ struct PokemonDto: Codable {
         case abilities
         case height
         case moves, name
-        case species, sprites, stats, types, weight
+        case sprites, stats, types, weight
     }
 }
 
-// MARK: - Ability
-struct Ability: Codable {
-    let ability: Species
+// MARK: - AbilityDto
+struct AbilityDto: Codable {
+    let ability: AbilityContentDto
     let isHidden: Bool
     let slot: Int
 
@@ -35,58 +34,30 @@ struct Ability: Codable {
     }
 }
 
-// MARK: - Species
-struct Species: Codable {
+// MARK: - AbilityContentDto
+struct AbilityContentDto: Codable {
     let name: String
     let url: String
 }
 
-// MARK: - Move
-struct Move: Codable {
-    let move: Species
-    let versionGroupDetails: [VersionGroupDetail]
+// MARK: - MoveContentDto
+struct MoveContentDto: Codable {
+    let name: String
+    let url: String
+}
+
+// MARK: - MoveDto
+struct MoveDto: Codable {
+    let move: MoveContentDto
 
     enum CodingKeys: String, CodingKey {
         case move
-        case versionGroupDetails = "version_group_details"
-    }
-}
-
-// MARK: - VersionGroupDetail
-struct VersionGroupDetail: Codable {
-    let levelLearnedAt: Int
-    let moveLearnMethod, versionGroup: Species
-
-    enum CodingKeys: String, CodingKey {
-        case levelLearnedAt = "level_learned_at"
-        case moveLearnMethod = "move_learn_method"
-        case versionGroup = "version_group"
-    }
-}
-
-// MARK: - GenerationV
-struct GenerationV: Codable {
-    let blackWhite: Sprites
-
-    enum CodingKeys: String, CodingKey {
-        case blackWhite = "black-white"
-    }
-}
-
-// MARK: - GenerationIv
-struct GenerationIv: Codable {
-    let diamondPearl, heartgoldSoulsilver, platinum: Sprites
-
-    enum CodingKeys: String, CodingKey {
-        case diamondPearl = "diamond-pearl"
-        case heartgoldSoulsilver = "heartgold-soulsilver"
-        case platinum
     }
 }
 
 
 // MARK: - Sprites
-struct Sprites: Codable {
+struct SpritesDto: Codable {
     let backDefault: String
     let backShiny: String
     let frontDefault: String
@@ -100,11 +71,16 @@ struct Sprites: Codable {
     }
 }
 
+// MARK: - StatContentDto
+struct StatContentDto: Codable {
+    let name: String
+    let url: String
+}
 
 // MARK: - Stat
-struct Stat: Codable {
+struct StatDto: Codable {
     let baseStat, effort: Int
-    let stat: Species
+    let stat: StatContentDto
 
     enum CodingKeys: String, CodingKey {
         case baseStat = "base_stat"
@@ -112,8 +88,29 @@ struct Stat: Codable {
     }
 }
 
+// MARK: - AbilityContentDto
+struct ContentTypeElementDto: Codable {
+    let name: String
+}
+
 // MARK: - TypeElement
-struct TypeElement: Codable {
+struct TypeElementDto: Codable {
     let slot: Int
-    let type: Species
+    let type: ContentTypeElementDto
+}
+
+extension PokemonDto {
+    var toPresentation: Pokemon {
+        Pokemon(
+            id: id,
+            abilities: abilities.map { Ability(name: $0.ability.name, slot: $0.slot)},
+            height: height,
+            moves: moves.map { Move(name: $0.move.name) },
+            name: name,
+            sprites: Sprites(frontDefault: URL(string: sprites.frontDefault), backDefault: URL(string: sprites.backDefault)),
+            stats: stats.map { Stat(baseStat: $0.baseStat, effort: $0.effort, name: $0.stat.name)},
+            types: types.map { TypeElement(slot: $0.slot, name: $0.type.name)},
+            weight: weight
+        )
+    }
 }
