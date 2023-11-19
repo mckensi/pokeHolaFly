@@ -11,8 +11,10 @@ final class PokemonsVM: ObservableObject {
     let network: DataInteractor
     
     @Published var pokemons: [Pokemon] = []
-    
-    var pokemonsDownloaded: [Pokemon] = []
+    @Published var alertMsg: String = ""
+    @Published var showAlert: Bool = false
+     
+    private var pokemonsDownloaded: [Pokemon] = []
     
     var currentOffset = 0
     
@@ -31,10 +33,10 @@ final class PokemonsVM: ObservableObject {
             }
         } catch {
             print(error)
-//            await MainActor.run {
-//                self.msg = "\(error)"
-//                self.showAlert.toggle()
-//            }
+            await MainActor.run {
+                self.alertMsg = "\(error)"
+                self.showAlert.toggle()
+            }
         }
     }
     
@@ -47,10 +49,10 @@ final class PokemonsVM: ObservableObject {
             }
         } catch {
             print(error)
-//            await MainActor.run {
-//                self.msg = "\(error)"
-//                self.showAlert.toggle()
-//            }
+            await MainActor.run {
+                self.alertMsg = "\(error)"
+                self.showAlert.toggle()
+            }
         }
     }
     
@@ -94,3 +96,31 @@ final class PokemonsVM: ObservableObject {
         }
     }
 }
+
+#if DEBUG
+extension PokemonsVM {
+    var testHooks: TestHooks {
+        return TestHooks(target: self)
+    }
+    
+    struct TestHooks {
+        private let target: PokemonsVM
+        
+        fileprivate init(target: PokemonsVM) {
+            self.target = target
+        }
+        
+        var pokemonsDownloaded: [Pokemon] {
+            target.pokemonsDownloaded
+        }
+        
+        func getPokemons() async {
+            await target.getPokemons()
+        }
+        
+        func getPokemonsWithPages(offset: Int) async {
+            await target.getPokemonsWithPages(offset: offset)
+        }
+    }
+}
+#endif

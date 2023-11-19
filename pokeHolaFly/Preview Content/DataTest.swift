@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 extension Pokemon {
     static let test = Pokemon(
         id: 1,
@@ -53,44 +51,21 @@ struct DataTest: DataInteractor {
     }
     
     func getPokemon(url: String) async throws -> PokemonDto {
-        return PokemonDto(
-            id: 1,
-            abilities: [],
-            height: 1,
-            moves: [],
-            name: "bulbasour",
-            sprites: SpritesDto(
-                backDefault: "",
-                backShiny: "",
-                frontDefault: "",
-                frontShiny: "", 
-                other: OtherDto(
-                    dreamWorld: DreamWorldDto(
-                        frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-                    ),
-                    officialArtWork: OfficialArtWorkDto(
-                        frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png")
-                )
-            ),
-            stats: [],
-            types: [],
-            weight: 2
-        )
+        let url = Bundle.main.url(forResource: "caterpie", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        return try JSONDecoder().decode(PokemonDto.self, from: data)
     }
-    
-    let url = Bundle.main.url(forResource: "pokemonList", withExtension: "json")!
-    
+
     func loadTestData() throws -> [Pokemon] {
+        let url = Bundle.main.url(forResource: "pokemonList", withExtension: "json")!
         let data = try Data(contentsOf: url)
         return try JSONDecoder().decode([PokemonDto].self, from: data).map(\.toPresentation)
     }
     
     func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail] {
-        return [
-            MoveDetail(id: 1, name: "transform", description: "User copies the target's species, weight, type, ability, calculated stats (except HP), and moves.  Copied moves will all have 5 PP remaining.  IVs are copied for the purposes of hidden power, but stats are not recalculated.\n\nchoice band, choice scarf, and choice specs stay in effect, and the user must select a new move.\n\nThis move cannot be copied by mirror move, nor forced by encore."
-            ),
-            MoveDetail(id: 2, name: "transform", description: "User copies the target's species, weight, type, ability.")
-        ]
+        let url = Bundle.main.url(forResource: "caterpie-moves", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        return try JSONDecoder().decode([MoveDetailDto].self, from: data).map(\.toPresentation)
     }
 }
 

@@ -14,7 +14,7 @@ protocol DataInteractor {
     func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail]
 }
 
-struct Network: DataInteractor {
+public struct Network: DataInteractor {
     
     func getJSON<JSON>(request: URLRequest, type: JSON.Type) async throws -> JSON where JSON: Codable {
         let (data, response) = try await URLSession.shared.getData(for: request)

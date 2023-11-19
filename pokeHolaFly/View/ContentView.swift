@@ -40,7 +40,13 @@ struct ContentView: View {
         .onChange(of: pokemonSearch) { _, newValue in
             vm.searchPokemons(search: newValue)
         }
-
+        .alert("Error", isPresented: $vm.showAlert) {
+            Button("Accept", role: .cancel) {
+                vm.showAlert.toggle()
+            }
+        } message: {
+            Text(vm.alertMsg)
+        }
     }
 }
 

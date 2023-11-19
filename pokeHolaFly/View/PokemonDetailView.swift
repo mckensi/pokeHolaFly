@@ -13,7 +13,7 @@ struct PokemonDetailView: View {
     
     @State private var scrollOffset: CGFloat = 0.0
     @State private var minOffset: CGFloat = 0.0
-
+    
     var body: some View {
         ZStack {
             BackgroundTopDynamicView(scrollOffset: $scrollOffset, backgroundColor: getColorBackground(type: pokemonDetailVM.pokemon.types.first))
@@ -54,7 +54,14 @@ struct PokemonDetailView: View {
                     .fill(getColorBackground(type: pokemonDetailVM.pokemon.types.first ?? TypeElement(slot: 1, name: "")))
                     .frame(height: UIDevice.topInsetSize)
             }
-        .ignoresSafeArea()
+            .ignoresSafeArea()
+        }
+        .alert("Error", isPresented: $pokemonDetailVM.showAlert) {
+            Button("Accept", role: .cancel) {
+                pokemonDetailVM.showAlert.toggle()
+            }
+        } message: {
+            Text(pokemonDetailVM.alertMsg)
         }
     }
     
