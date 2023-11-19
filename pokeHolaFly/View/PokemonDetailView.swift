@@ -39,7 +39,7 @@ struct PokemonDetailView: View {
                         }
                         Spacer()
                     }
-                    .background(getColorBackground(type: pokemon.types.first ?? TypeElement(slot: 1, name: "")))
+                    .background(getColorBackground(type: pokemon.types.first))
                     .ignoresSafeArea()
                     Text("Stats")
                         .font(.title3)
@@ -50,19 +50,10 @@ struct PokemonDetailView: View {
                                 Text(stat.name)
                                     .frame(width: 100, alignment: .leading)
                                     .font(.footnote)
-                                HStack {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .fill(Color(white: 0.9))
-                                        .frame(width: 200)
-                                        .overlay {
-                                            HStack {
-                                                RoundedRectangle(cornerRadius: 8)
-                                                    .fill(getColorBackground(type: pokemon.types.first ?? TypeElement(slot: 1, name: "")))
-                                                    .frame(width: CGFloat( 200 * stat.baseStat / 100))
-                                                Spacer()
-                                            }
-                                        }
-                                }
+                                BarView(
+                                    value: Double(stat.baseStat),
+                                    color: getColorBackground(type: pokemon.types.first)
+                                )
                             }
                             .padding(.trailing, 10)
                          

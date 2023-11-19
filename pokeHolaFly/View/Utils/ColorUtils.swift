@@ -8,7 +8,10 @@
 import Foundation
 import SwiftUI
 
-func getColorBackground(type: TypeElement) -> Color {
+func getColorBackground(type: TypeElement?) -> Color {
+    guard let type else {
+        return .pokeGround
+    }
     switch type.name {
     case "normal":
         return .pokeGround
@@ -53,7 +56,11 @@ func getColorBackground(type: TypeElement) -> Color {
     }
 }
 
-func getColorBackgroundType(type: TypeElement) -> Color {
+func getColorBackgroundType(type: TypeElement?) -> Color {
+    guard let type else {
+        return .pokeGround
+    }
+
     switch type.name {
     case "normal":
         return .typeGround
