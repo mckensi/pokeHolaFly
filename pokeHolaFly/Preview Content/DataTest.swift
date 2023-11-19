@@ -97,3 +97,11 @@ struct DataTest: DataInteractor {
 extension PokemonDetailVM {
     static let test = PokemonDetailVM(network: DataTest(), pokemon: .test)
 }
+
+extension MoveDetail {
+    static let arrayTest: [MoveDetail] = [
+        MoveDetail(id: 1, name: "transform", description: "User copies the target's species, weight, type, ability, calculated stats (except HP), and moves.  Copied moves will all have 5 PP remaining.  IVs are copied for the purposes of hidden power, but stats are not recalculated.\n\nchoice band, choice scarf, and choice specs stay in effect, and the user must select a new move.\n\nThis move cannot be copied by mirror move, nor forced by encore."
+                      ),
+        MoveDetail(id: 2, name: "transform", description: "User copies the target's species, weight, type, ability.")
+    ]
+}

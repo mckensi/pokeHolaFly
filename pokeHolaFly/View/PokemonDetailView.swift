@@ -31,7 +31,7 @@ struct PokemonDetailView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
                 .navigationBarItems(
-                    leading: CustomBackButton(
+                    leading: CustomBackButtonView(
                         action: {
                             dismiss()
                         }
@@ -63,76 +63,5 @@ struct PokemonDetailView: View {
 #Preview {
     NavigationStack {
         PokemonDetailView(pokemonDetailVM: PokemonDetailVM(network: DataTest(), pokemon: .test))
-    }
-}
-
-struct BackgroundTopDynamicView: View {
-    @Binding var scrollOffset: CGFloat
-    let backgroundColor: Color
-    var body: some View {
-        VStack {
-            if scrollOffset > 0 && scrollOffset < 1000 {
-                Rectangle()
-                    .fill(backgroundColor)
-                    .frame(height: max(min(scrollOffset, 1000), 0))
-            }
-            Spacer()
-        }
-        .ignoresSafeArea()
-    }
-}
-
-struct CustomBackButton: View {
-    var action: () -> Void
-    var body: some View {
-        Button(action: {
-            action()
-        }, label: {
-            Image(systemName: "chevron.left")
-                .foregroundColor(.black)
-        })
-    }
-}
-
-struct MovesGridView: View {
-    let itemAdaptativeMoves = GridItem(.fixed(100))
-    @Binding var moveDetails: [MoveDetail]
-    var body: some View {
-        VStack {
-            HStack {
-                Text("Moves")
-                    .font(.headline)
-                Spacer()
-            }
-            ScrollView(.horizontal) {
-                LazyHGrid(rows: [itemAdaptativeMoves]) {
-                    ForEach(moveDetails) { move in
-                        VStack(alignment: .leading) {
-                            Text(move.name.capitalized)
-                                .font(.caption)
-                                .bold()
-                                .padding(6)
-                            Text(move.description)
-                                .font(.caption2)
-                                .padding(6)
-                                .lineLimit(6, reservesSpace: true)
-                        }
-                        .background {
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(Color(UIColor.systemBackground))
-                                .shadow(
-                                    color: .gray.opacity(0.3),
-                                    radius: 2,
-                                    x: 0,
-                                    y: 4
-                                )
-                        }
-                        .frame(width: 140)
-                        .padding(.vertical, 12)
-                    }
-                }
-            }
-        }
-        .padding(.horizontal, 8)
     }
 }
