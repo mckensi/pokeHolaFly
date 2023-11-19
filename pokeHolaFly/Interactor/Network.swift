@@ -11,6 +11,7 @@ protocol DataInteractor {
     func getPokemonsList(offset: Int) async throws -> [Pokemon]
     func getPokemon(url: String) async throws -> PokemonDto
     func searchPokemon(search: String)  async throws -> Pokemon?
+    func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail]
 }
 
 struct Network: DataInteractor {
@@ -79,5 +80,27 @@ struct Network: DataInteractor {
     
     func searchPokemon(search: String) async throws -> Pokemon? {
         try await getJSON(request: .get(url: .searchPokemon(search: search)), type: PokemonDto?.self)?.toPresentation
+    }
+    
+    func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail] {
+        return await withTaskGroup(of: MoveDetailDto?.self, returning: [MoveDetail].self) { group in
+            var result: [MoveDetail] = []
+            for url in urls {
+                group.addTask {
+                    do {
+                        return try await getJSON(request: .get(url: .getMoveDetail(url: url)), type: MoveDetailDto.self)
+                    } catch {
+                        print(error)
+                        return nil
+                    }
+                }
+            }
+            
+            for await move in group.compactMap({ $0 }) {
+                result.append(move.toPresentation)
+            }
+            
+            return result
+        }
     }
 }

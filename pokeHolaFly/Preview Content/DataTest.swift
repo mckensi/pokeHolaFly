@@ -15,11 +15,11 @@ extension Pokemon {
         abilities: [Ability(name: "overgrow", slot: 1)],
         height: 7,
         moves: [
-            Move(name: "raszor-wind"),
-            Move(name: "razor-wind"),
-            Move(name: "razwor-wind"),
-            Move(name: "razwor-wisnd"),
-            Move(name: "razwor-wisnd")
+            Move(name: "raszor-wind", url: URL(string: "https://pokeapi.co/api/v2/move/144/")),
+            Move(name: "razor-wind", url: URL(string: "https://pokeapi.co/api/v2/move/144/")),
+            Move(name: "razwor-wind", url: URL(string: "https://pokeapi.co/api/v2/move/144/")),
+            Move(name: "razwor-wisnd", url: URL(string: "https://pokeapi.co/api/v2/move/144/")),
+            Move(name: "razwor-wisnd", url: URL(string: "https://pokeapi.co/api/v2/move/144/"))
         ],
         name: "bulbasaur",
         sprites: Sprites(
@@ -84,5 +84,16 @@ struct DataTest: DataInteractor {
         let data = try Data(contentsOf: url)
         return try JSONDecoder().decode([PokemonDto].self, from: data).map(\.toPresentation)
     }
+    
+    func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail] {
+        return [
+            MoveDetail(id: 1, name: "transform", description: "User copies the target's species, weight, type, ability, calculated stats (except HP), and moves.  Copied moves will all have 5 PP remaining.  IVs are copied for the purposes of hidden power, but stats are not recalculated.\n\nchoice band, choice scarf, and choice specs stay in effect, and the user must select a new move.\n\nThis move cannot be copied by mirror move, nor forced by encore."
+            ),
+            MoveDetail(id: 2, name: "transform", description: "User copies the target's species, weight, type, ability.")
+        ]
+    }
+}
 
+extension PokemonDetailVM {
+    static let test = PokemonDetailVM(network: DataTest(), pokemon: .test)
 }

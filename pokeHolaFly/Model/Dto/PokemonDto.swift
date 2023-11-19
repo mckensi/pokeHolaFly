@@ -134,7 +134,7 @@ extension PokemonDto {
             id: id,
             abilities: abilities.map { Ability(name: $0.ability.name, slot: $0.slot)},
             height: height,
-            moves: moves.map { Move(name: $0.move.name) },
+            moves: moves.map { Move(name: $0.move.name, url: URL(string: $0.move.url)) },
             name: name,
             sprites: Sprites(
                 frontDefault: URL(string: sprites.frontDefault),

@@ -33,7 +33,7 @@ struct ContentView: View {
                 .navigationTitle("POKEDESK")
             }
             .navigationDestination(for: Pokemon.self) { pokemon in
-                PokemonDetailView(pokemon: pokemon)
+                PokemonDetailView(pokemonDetailVM: PokemonDetailVM(pokemon: pokemon))
             }
         }
         .searchable(text: $pokemonSearch)

@@ -29,6 +29,7 @@ struct Ability: Identifiable, Hashable {
 struct Move: Identifiable, Hashable {
     var id: Self { self }
     let name: String
+    let url: URL?
 }
 
 struct Sprites: Identifiable, Hashable {

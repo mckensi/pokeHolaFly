@@ -38,5 +38,9 @@ extension URL {
         let url = api.appending(path: "pokemon").appending(path: search.lowercased())
         return url
     }
+    
+    static func getMoveDetail(url: URL?) -> URL {
+        url ?? URL(string: "https://pokeapi.co/api/v2/move/144/")!
+    }
 }
 

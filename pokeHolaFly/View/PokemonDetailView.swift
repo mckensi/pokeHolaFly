@@ -9,61 +9,25 @@ import SwiftUI
 
 struct PokemonDetailView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var pokemonDetailVM: PokemonDetailVM
     
     @State private var scrollOffset: CGFloat = 0.0
     @State private var minOffset: CGFloat = 0.0
-    
-    let itemAdaptativeMoves = GridItem(.flexible(minimum: 30, maximum: 60))
-    
-    var pokemon: Pokemon
+
     var body: some View {
         ZStack {
-            BackgroundTopDynamicView(scrollOffset: $scrollOffset, backgroundColor: getColorBackground(type: pokemon.types.first))
+            BackgroundTopDynamicView(scrollOffset: $scrollOffset, backgroundColor: getColorBackground(type: pokemonDetailVM.pokemon.types.first))
             ScrollView {
                 VStack(alignment: .center, spacing: 14) {
                     TopImageView(
-                        url: pokemon.sprites.other.officialArtwork.frontDefault,
-                        backgroundColor: getColorBackground(type: pokemon.types.first)
+                        url: pokemonDetailVM.pokemon.sprites.other.officialArtwork.frontDefault,
+                        backgroundColor: getColorBackground(type: pokemonDetailVM.pokemon.types.first)
                     )
-                    SpeciesInfoView(pokemon: pokemon)
-                    PokemonStatsView(stats: pokemon.stats, barColor: getColorBackground(type: pokemon.types.first))
-                    VStack {
-                        HStack {
-                            Text("Moves")
-                                .font(.headline)
-                            Spacer()
-                        }
-                        ScrollView(.horizontal) {
-                            LazyHGrid(rows: [itemAdaptativeMoves]) {
-                                ForEach(pokemon.moves) { move in
-                                    VStack(alignment: .leading) {
-                                        Text(move.name.capitalized)
-                                            .font(.caption)
-                                            .bold()
-                                            .padding(6)
-                                        Text("Alguna descripción que me gustarìa tener acá")
-                                            .font(.caption2)
-                                            .padding(6)
-                                    }
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color(UIColor.systemBackground))
-                                            .shadow(
-                                                color: .gray.opacity(0.3),
-                                                radius: 2,
-                                                x: 0,
-                                                y: 4
-                                            )
-                                    }
-                                    .frame(width: 140, height: 100)
-                                    .padding(.vertical, 10)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 8)
+                    SpeciesInfoView(pokemon: pokemonDetailVM.pokemon)
+                    PokemonStatsView(stats: pokemonDetailVM.pokemon.stats, barColor: getColorBackground(type: pokemonDetailVM.pokemon.types.first))
+                    MovesGridView(moveDetails: $pokemonDetailVM.movesDetails)
                 }
-                .navigationTitle(pokemon.name.capitalized)
+                .navigationTitle(pokemonDetailVM.pokemon.name.capitalized)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
                 .navigationBarItems(
@@ -87,7 +51,7 @@ struct PokemonDetailView: View {
             }
             .safeAreaInset(edge: .top, spacing: 0) {
                 Rectangle()
-                    .fill(getColorBackground(type: pokemon.types.first ?? TypeElement(slot: 1, name: "")))
+                    .fill(getColorBackground(type: pokemonDetailVM.pokemon.types.first ?? TypeElement(slot: 1, name: "")))
                     .frame(height: UIDevice.topInsetSize)
             }
         .ignoresSafeArea()
@@ -98,7 +62,7 @@ struct PokemonDetailView: View {
 
 #Preview {
     NavigationStack {
-        PokemonDetailView(pokemon: .test)
+        PokemonDetailView(pokemonDetailVM: PokemonDetailVM(network: DataTest(), pokemon: .test))
     }
 }
 
@@ -127,5 +91,48 @@ struct CustomBackButton: View {
             Image(systemName: "chevron.left")
                 .foregroundColor(.black)
         })
+    }
+}
+
+struct MovesGridView: View {
+    let itemAdaptativeMoves = GridItem(.fixed(100))
+    @Binding var moveDetails: [MoveDetail]
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Moves")
+                    .font(.headline)
+                Spacer()
+            }
+            ScrollView(.horizontal) {
+                LazyHGrid(rows: [itemAdaptativeMoves]) {
+                    ForEach(moveDetails) { move in
+                        VStack(alignment: .leading) {
+                            Text(move.name.capitalized)
+                                .font(.caption)
+                                .bold()
+                                .padding(6)
+                            Text(move.description)
+                                .font(.caption2)
+                                .padding(6)
+                                .lineLimit(6, reservesSpace: true)
+                        }
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color(UIColor.systemBackground))
+                                .shadow(
+                                    color: .gray.opacity(0.3),
+                                    radius: 2,
+                                    x: 0,
+                                    y: 4
+                                )
+                        }
+                        .frame(width: 140)
+                        .padding(.vertical, 12)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 8)
     }
 }
