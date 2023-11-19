@@ -22,6 +22,11 @@ struct ContentView: View {
                             PokemonCell(pokemon: pokemon)
                         }
                         .buttonStyle(.plain)
+                        .onAppear {
+                            if pokemonSearch == "" {
+                                vm.shouldCallNextPageOfPokemons(pokemon: pokemon)
+                            }
+                        }
                     }
                 })
                 .padding(12)
@@ -32,6 +37,9 @@ struct ContentView: View {
             }
         }
         .searchable(text: $pokemonSearch)
+        .onChange(of: pokemonSearch) { _, newValue in
+            vm.searchPokemons(search: newValue)
+        }
 
     }
 }

@@ -62,12 +62,14 @@ struct SpritesDto: Codable {
     let backShiny: String
     let frontDefault: String
     let frontShiny: String
+    let other: OtherDto
 
     enum CodingKeys: String, CodingKey {
         case backDefault = "back_default"
         case backShiny = "back_shiny"
         case frontDefault = "front_default"
         case frontShiny = "front_shiny"
+        case other
     }
 }
 
@@ -99,6 +101,33 @@ struct TypeElementDto: Codable {
     let type: ContentTypeElementDto
 }
 
+// MARK: - OtherDto
+struct OtherDto: Codable {
+    var dreamWorld: DreamWorldDto
+    var officialArtWork: OfficialArtWorkDto
+    
+    enum CodingKeys: String, CodingKey {
+        case dreamWorld = "dream_world"
+        case officialArtWork = "official-artwork"
+    }
+}
+
+struct DreamWorldDto: Codable {
+    var frontDefault: String
+    
+    enum CodingKeys: String, CodingKey {
+        case frontDefault = "front_default"
+    }
+}
+
+struct OfficialArtWorkDto: Codable {
+    var frontDefault: String
+    
+    enum CodingKeys: String, CodingKey {
+        case frontDefault = "front_default"
+    }
+}
+
 extension PokemonDto {
     var toPresentation: Pokemon {
         Pokemon(
@@ -107,10 +136,20 @@ extension PokemonDto {
             height: height,
             moves: moves.map { Move(name: $0.move.name) },
             name: name,
-            sprites: Sprites(frontDefault: URL(string: sprites.frontDefault), backDefault: URL(string: sprites.backDefault)),
+            sprites: Sprites(
+                frontDefault: URL(string: sprites.frontDefault),
+                backDefault: URL(string: sprites.backDefault),
+                other: Other(
+                    dreamWorld: DreamWorld(frontDefault: URL(string: sprites.other.dreamWorld.frontDefault)),
+                    officialArtwork: OfficialArtwork(frontDefault:  URL(string: sprites.other.officialArtWork.frontDefault))
+                )
+            ),
             stats: stats.map { Stat(baseStat: $0.baseStat, effort: $0.effort, name: $0.stat.name)},
             types: types.map { TypeElement(slot: $0.slot, name: $0.type.name)},
             weight: weight
         )
     }
 }
+
+
+

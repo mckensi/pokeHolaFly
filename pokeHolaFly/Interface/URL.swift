@@ -33,5 +33,10 @@ extension URL {
     static func getPokemon(url: String) -> URL {
           URL(string: url) ?? URL(string: "https://pokeapi.co/api/v2/pokemon/1/")!
     }
+    
+    static func searchPokemon(search: String) -> URL {
+        let url = api.appending(path: "pokemon").appending(path: search.lowercased())
+        return url
+    }
 }
 

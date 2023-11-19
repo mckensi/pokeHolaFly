@@ -30,4 +30,18 @@ extension UIDevice {
             .safeAreaInsets
             .bottom ?? 0
     }
+    
+    static var navigationHeight: CGFloat? {
+        UIApplication
+            .shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap(\.windows)
+            .first { $0.isKeyWindow }?
+            .rootViewController?
+            .navigationController?
+            .navigationBar
+            .frame
+            .height
+    }
 }

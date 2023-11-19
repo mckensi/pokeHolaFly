@@ -24,7 +24,7 @@ struct PokemonCell: View {
             }
             HStack {
                 Spacer()
-                AsyncImage(url: pokemon.sprites.frontDefault) { image in
+                AsyncImage(url: pokemon.sprites.other.officialArtwork.frontDefault) { image in
                     image
                         .resizable()
                         .frame(width: 100, height: 100)

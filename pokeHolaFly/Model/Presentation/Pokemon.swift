@@ -35,6 +35,7 @@ struct Sprites: Identifiable, Hashable {
     var id: Self { self }
     let frontDefault: URL?
     let backDefault: URL?
+    let other: Other
 }
 
 struct Stat: Identifiable, Hashable {
@@ -47,4 +48,20 @@ struct TypeElement: Identifiable, Hashable {
     var id: Self { self }
     let slot: Int
     let name: String
+}
+
+struct Other: Identifiable, Hashable {
+    var id: Self { self }
+    var dreamWorld: DreamWorld
+    var officialArtwork: OfficialArtwork
+}
+
+struct DreamWorld: Identifiable, Hashable {
+    var id: Self { self }
+    var frontDefault: URL?
+}
+
+struct OfficialArtwork: Identifiable, Hashable  {
+    var id: Self { self }
+    var frontDefault: URL?
 }
