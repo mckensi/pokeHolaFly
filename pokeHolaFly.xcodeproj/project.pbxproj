@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4EB6EA452B098BD6000832D9 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA442B098BD6000832D9 /* BarView.swift */; };
+		4EB6EA482B0A67DF000832D9 /* SpeciesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA472B0A67DF000832D9 /* SpeciesInfoView.swift */; };
+		4EB6EA4C2B0A6B2D000832D9 /* TopImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA4B2B0A6B2D000832D9 /* TopImageView.swift */; };
+		4EB6EA4E2B0A728C000832D9 /* PokemonStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA4D2B0A728C000832D9 /* PokemonStatsView.swift */; };
 		8C1E38A92B068D7F002FDD0C /* pokeHolaFlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38A82B068D7F002FDD0C /* pokeHolaFlyApp.swift */; };
 		8C1E38AB2B068D7F002FDD0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38AA2B068D7F002FDD0C /* ContentView.swift */; };
 		8C1E38AD2B068D80002FDD0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E38AC2B068D80002FDD0C /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		4EB6EA442B098BD6000832D9 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BarView.swift; path = pokeHolaFly/View/Components/BarView.swift; sourceTree = SOURCE_ROOT; };
+		4EB6EA472B0A67DF000832D9 /* SpeciesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesInfoView.swift; sourceTree = "<group>"; };
+		4EB6EA4B2B0A6B2D000832D9 /* TopImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopImageView.swift; sourceTree = "<group>"; };
+		4EB6EA4D2B0A728C000832D9 /* PokemonStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonStatsView.swift; sourceTree = "<group>"; };
 		8C1E38A52B068D7F002FDD0C /* pokeHolaFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeHolaFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1E38A82B068D7F002FDD0C /* pokeHolaFlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyApp.swift; sourceTree = "<group>"; };
 		8C1E38AA2B068D7F002FDD0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				4EB6EA442B098BD6000832D9 /* BarView.swift */,
+				4EB6EA472B0A67DF000832D9 /* SpeciesInfoView.swift */,
+				4EB6EA4B2B0A6B2D000832D9 /* TopImageView.swift */,
+				4EB6EA4D2B0A728C000832D9 /* PokemonStatsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -381,6 +390,8 @@
 				8CB90D652B07E61500803C63 /* PokemonDetailView.swift in Sources */,
 				4EB6EA452B098BD6000832D9 /* BarView.swift in Sources */,
 				8C1E38E82B06DF36002FDD0C /* Network.swift in Sources */,
+				4EB6EA4C2B0A6B2D000832D9 /* TopImageView.swift in Sources */,
+				4EB6EA4E2B0A728C000832D9 /* PokemonStatsView.swift in Sources */,
 				8C1E38DE2B06D739002FDD0C /* Pokemon.swift in Sources */,
 				8C1E38E42B06DDD0002FDD0C /* NetworkError.swift in Sources */,
 				8C1E38EA2B0709DB002FDD0C /* PokemonsVM.swift in Sources */,
@@ -391,6 +402,7 @@
 				8CCEB2F22B07B7B5004026BE /* DataTest.swift in Sources */,
 				8CB90D682B07F84200803C63 /* ColorUtils.swift in Sources */,
 				8CB90D6E2B0812CE00803C63 /* Extensions.swift in Sources */,
+				4EB6EA482B0A67DF000832D9 /* SpeciesInfoView.swift in Sources */,
 				8C1E38E62B06DE6C002FDD0C /* URLSession.swift in Sources */,
 				8C1E38D92B06D20F002FDD0C /* PokemonListDto.swift in Sources */,
 				8C1E38DB2B06D28B002FDD0C /* PokemonDto.swift in Sources */,

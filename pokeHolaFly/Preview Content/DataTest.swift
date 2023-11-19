@@ -14,7 +14,13 @@ extension Pokemon {
         id: 1,
         abilities: [Ability(name: "overgrow", slot: 1)],
         height: 7,
-        moves: [Move(name: "razor-wind")],
+        moves: [
+            Move(name: "raszor-wind"),
+            Move(name: "razor-wind"),
+            Move(name: "razwor-wind"),
+            Move(name: "razwor-wisnd"),
+            Move(name: "razwor-wisnd")
+        ],
         name: "bulbasaur",
         sprites: Sprites(
             frontDefault: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"),
