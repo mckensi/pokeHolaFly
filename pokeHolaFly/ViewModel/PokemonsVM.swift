@@ -54,9 +54,10 @@ final class PokemonsVM: ObservableObject {
                     self.showAlert.toggle()
                 }
             } receiveValue: { pokemonsDto in
+                let pokemonsDto = pokemonsDto.map { $0.toPresentation }.sorted { $0.id < $1.id }
                 DispatchQueue.main.async {
-                    self.pokemons = pokemonsDto.map { $0.toPresentation }.sorted { $0.id < $1.id }
-                    self.pokemonsDownloaded = pokemonsDto.map { $0.toPresentation }.sorted { $0.id < $1.id }
+                    self.pokemons = pokemonsDto
+                    self.pokemonsDownloaded = pokemonsDto
                 }
 
             }

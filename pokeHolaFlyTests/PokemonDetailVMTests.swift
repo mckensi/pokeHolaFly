@@ -27,11 +27,13 @@ final class PokemonDetailVMTest: XCTestCase {
             return
         }
         
-        await vm.testHooks.getMovesDetails()
+        vm.testHooks.getMovesDetails()
         
-        XCTAssertFalse(vm.showAlert)
-        XCTAssertTrue(vm.alertMsg.isEmpty)
-        XCTAssertFalse(vm.movesDetails.isEmpty)
-        XCTAssertEqual(vm.movesDetails.count, 2)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            XCTAssertFalse(vm.showAlert)
+            XCTAssertTrue(vm.alertMsg.isEmpty)
+            XCTAssertFalse(vm.movesDetails.isEmpty)
+            XCTAssertEqual(vm.movesDetails.count, 2)
+        }
     }
 }
