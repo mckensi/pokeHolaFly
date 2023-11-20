@@ -25,7 +25,6 @@
 		8C1E38AB2B068D7F002FDD0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38AA2B068D7F002FDD0C /* ContentView.swift */; };
 		8C1E38AD2B068D80002FDD0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E38AC2B068D80002FDD0C /* Assets.xcassets */; };
 		8C1E38B02B068D80002FDD0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E38AF2B068D80002FDD0C /* Preview Assets.xcassets */; };
-		8C1E38BA2B068D81002FDD0C /* pokeHolaFlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38B92B068D81002FDD0C /* pokeHolaFlyTests.swift */; };
 		8C1E38C42B068D81002FDD0C /* pokeHolaFlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38C32B068D81002FDD0C /* pokeHolaFlyUITests.swift */; };
 		8C1E38C62B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38C52B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift */; };
 		8C1E38D92B06D20F002FDD0C /* PokemonListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E38D82B06D20F002FDD0C /* PokemonListDto.swift */; };
@@ -83,7 +82,6 @@
 		8C1E38AC2B068D80002FDD0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C1E38AF2B068D80002FDD0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C1E38B52B068D81002FDD0C /* pokeHolaFlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokeHolaFlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C1E38B92B068D81002FDD0C /* pokeHolaFlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyTests.swift; sourceTree = "<group>"; };
 		8C1E38BF2B068D81002FDD0C /* pokeHolaFlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokeHolaFlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1E38C32B068D81002FDD0C /* pokeHolaFlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyUITests.swift; sourceTree = "<group>"; };
 		8C1E38C52B068D81002FDD0C /* pokeHolaFlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeHolaFlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 		8C1E38B82B068D81002FDD0C /* pokeHolaFlyTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C1E38B92B068D81002FDD0C /* pokeHolaFlyTests.swift */,
 				4ED6D7612B0AC14500CFCF2F /* PokemonVMTest.swift */,
 				4ED6D7662B0AD14F00CFCF2F /* PokemonDetailVMTests.swift */,
 			);
@@ -454,7 +451,6 @@
 			files = (
 				4ED6D7672B0AD14F00CFCF2F /* PokemonDetailVMTests.swift in Sources */,
 				4ED6D7622B0AC14500CFCF2F /* PokemonVMTest.swift in Sources */,
-				8C1E38BA2B068D81002FDD0C /* pokeHolaFlyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

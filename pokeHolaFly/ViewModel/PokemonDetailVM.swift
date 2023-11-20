@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 final class PokemonDetailVM: ObservableObject {
     let network: DataInteractor
@@ -15,35 +16,41 @@ final class PokemonDetailVM: ObservableObject {
     @Published var alertMsg: String = ""
     @Published var showAlert: Bool = false
     
+    var subscribers = Set<AnyCancellable>()
+    
     init(network: DataInteractor = Network(), pokemon: Pokemon) {
         self.network = network
         self.pokemon = pokemon
-        
-        Task {
-            await getMovesDetails()
-        }
-        
+    
+        getMovesDetails()
     }
 
-    private func getMovesDetails() async {
+    private func getMovesDetails() {
         var movesUrls: [URL?] = []
         
         pokemon.moves.forEach { move in
             movesUrls.append(move.url)
         }
+        
+        let publishers = network.getMoveDetail(urls: movesUrls)
+        
+        let publisherMerged = Publishers.MergeMany(publishers)
+        
+        publisherMerged
+            .collect()
+            .sink { completion in
+                if case .failure(let error) = completion, let networkErr = error as? NetworkError {
+                    self.alertMsg = "\(networkErr.description)"
+                    self.showAlert.toggle()
+                }
+            } receiveValue: { moveDetails in
+                DispatchQueue.main.async {
+                    let moveDetails = moveDetails.map { $0.toPresentation }.sorted { $0.id < $1.id }
+                    self.movesDetails.append(contentsOf: moveDetails)
+                }
 
-        do {
-            let movesDetails = try await network.getMoveDetail(urls: movesUrls)
-            await MainActor.run {
-                self.movesDetails = movesDetails
             }
-        } catch {
-            print(error)
-            await MainActor.run {
-                self.alertMsg = "\(error)"
-                self.showAlert.toggle()
-            }
-        }
+            .store(in: &subscribers)
     }
 }
 
@@ -60,8 +67,8 @@ extension PokemonDetailVM {
             self.target = target
         }
         
-        func getMovesDetails() async {
-            await target.getMovesDetails()
+        func getMovesDetails() {
+            target.getMovesDetails()
         }
     }
 }

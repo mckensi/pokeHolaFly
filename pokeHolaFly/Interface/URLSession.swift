@@ -6,33 +6,52 @@
 //
 
 import Foundation
+import Combine
 
 extension URLSession {
-    func getData(from url: URL, delegate: (URLSessionTaskDelegate)? = nil) async throws -> (Data, HTTPURLResponse) {
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url, delegate: delegate)
-            guard let response = response as? HTTPURLResponse else {
-                throw NetworkError.noHTTP
+    func getData(from url: URL) -> AnyPublisher<Data, Error>  {        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .mapError { error -> NetworkError in
+                if error.errorCode == -1001 {
+                    return .unknown
+                } else {
+                    return .general(error)
+                }
             }
-            return (data, response)
-        } catch let error as NetworkError {
-            throw error
-        } catch {
-            throw NetworkError.general(error)
-        }
+            .retry(3)
+            .tryMap { (data, response) -> Data in
+                guard let response = response as? HTTPURLResponse else {
+                    throw NetworkError.unknown
+                }
+                if response.statusCode == 200 {
+                    return data
+                } else {
+                    throw NetworkError.status(response.statusCode)
+                }
+            }
+            .eraseToAnyPublisher()
     }
     
-    func getData(for url: URLRequest, delegate: (URLSessionTaskDelegate)? = nil) async throws -> (Data, HTTPURLResponse) {
-        do {
-            let (data, response) = try await URLSession.shared.data(for: url, delegate: delegate)
-            guard let response = response as? HTTPURLResponse else {
-                throw NetworkError.noHTTP
+    func getData(for url: URLRequest) -> AnyPublisher<Data, Error> {
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .mapError { error -> NetworkError in
+                if error.errorCode == -1001 {
+                    return .unknown
+                } else {
+                    return .general(error)
+                }
             }
-            return (data, response)
-        } catch let error as NetworkError {
-            throw error
-        } catch {
-            throw NetworkError.general(error)
-        }
+            .retry(3)
+            .tryMap { (data, response) -> Data in
+                guard let response = response as? HTTPURLResponse else {
+                    throw NetworkError.unknown
+                }
+                if response.statusCode == 200 {
+                    return data
+                } else {
+                    throw NetworkError.status(response.statusCode)
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }

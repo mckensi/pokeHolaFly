@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 extension Pokemon {
     static let test = Pokemon(
@@ -39,33 +40,80 @@ extension PokemonsVM {
 }
 
 struct DataTest: DataInteractor {
-    func searchPokemon(search: String) async throws -> Pokemon? {
-        return .test
-    }
-    
-    func getPokemonsList(offset: Int) async throws -> [Pokemon] {
-        if offset != 0 {
-            return []
+    func searchPokemon(search: String) -> AnyPublisher<PokemonDto?, Error> {
+        let pokemon: PokemonDto? = nil
+        
+        // Simulamos una solicitud asincrónica
+        return Future<PokemonDto?, Error> { promise in
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                promise(.success(pokemon))
+            }
         }
-        return try loadTestData()
+        .eraseToAnyPublisher()
     }
     
-    func getPokemon(url: String) async throws -> PokemonDto {
-        let url = Bundle.main.url(forResource: "caterpie", withExtension: "json")!
-        let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode(PokemonDto.self, from: data)
-    }
-
-    func loadTestData() throws -> [Pokemon] {
+    func getPokemonsListPublisher(offset: Int) -> AnyPublisher<PokemonListDto, Error> {
         let url = Bundle.main.url(forResource: "pokemonList", withExtension: "json")!
-        let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode([PokemonDto].self, from: data).map(\.toPresentation)
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: PokemonListDto.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
     
-    func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail] {
-        let url = Bundle.main.url(forResource: "caterpie-moves", withExtension: "json")!
-        let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode([MoveDetailDto].self, from: data).map(\.toPresentation)
+    func getPokemonPublisher(url: String) -> AnyPublisher<PokemonDto, Error> {
+        let url = Bundle.main.url(forResource: "caterpie", withExtension: "json")!
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: PokemonDto.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
+    
+//    func searchPokemon(search: String) async throws -> Pokemon? {
+//        return .test
+//    }
+//    
+//    func getPokemonsList(offset: Int) async throws -> [Pokemon] {
+//        if offset != 0 {
+//            return []
+//        }
+//        return try loadTestData()
+//    }
+//    
+//    func getPokemon(url: String) async throws -> PokemonDto {
+//        let url = Bundle.main.url(forResource: "caterpie", withExtension: "json")!
+//        let data = try Data(contentsOf: url)
+//        return try JSONDecoder().decode(PokemonDto.self, from: data)
+//    }
+//
+//    func loadTestData() throws -> [Pokemon] {
+//        let url = Bundle.main.url(forResource: "pokemonList", withExtension: "json")!
+//        let data = try Data(contentsOf: url)
+//        return try JSONDecoder().decode([PokemonDto].self, from: data).map(\.toPresentation)
+//    }
+//    
+//    func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail] {
+//        let url = Bundle.main.url(forResource: "caterpie-moves", withExtension: "json")!
+//        let data = try Data(contentsOf: url)
+//        return try JSONDecoder().decode([MoveDetailDto].self, from: data).map(\.toPresentation)
+//    }
+    
+    func getMoveDetail(urls: [URL?]) -> [AnyPublisher<MoveDetailDto, Error>] {
+        let moveDetailDto = MoveDetailDto(id: 1, effectEntries: [], flavorTextEntries: [], name: "Hit", names: [], pp: 0, priority: 1, type: ContestType(name: "name", url: ""))
+        let first = Future<MoveDetailDto, Error> { promise in
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                promise(.success(moveDetailDto))
+            }
+        }
+        .eraseToAnyPublisher()
+        
+        let second = Future<MoveDetailDto, Error> { promise in
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                promise(.success(moveDetailDto))
+            }
+        }
+        .eraseToAnyPublisher()
+        
+        return [first, second]
     }
 }
 
