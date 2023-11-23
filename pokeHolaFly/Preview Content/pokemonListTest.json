@@ -1,0 +1,15 @@
+{
+  "count": 1292,
+  "next": "https://pokeapi.co/api/v2/pokemon?offset=2&limit=2",
+  "previous": null,
+  "results": [
+    {
+      "name": "caterpie",
+      "url": "https://pokeapi.co/api/v2/pokemon/10/"
+    },
+    {
+      "name": "pikachu",
+      "url": "https://pokeapi.co/api/v2/pokemon/25/"
+    }
+  ]
+}

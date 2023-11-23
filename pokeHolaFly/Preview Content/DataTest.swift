@@ -44,22 +44,40 @@ struct DataTest: DataInteractor {
     }
     
     func getPokemonsList(offset: Int) async throws -> [Pokemon] {
-        if offset != 0 {
-            return []
+        let pokemonList = try loadTestData()
+        
+        return try await withThrowingTaskGroup(of: PokemonDto.self, returning: [Pokemon].self) { group in
+            var result: [Pokemon] = []
+            for pokemon in pokemonList.results {
+                group.addTask {
+                    try await getPokemon(url: pokemon.url)
+                }
+            }
+            
+            for try await pokemon in group {
+                result.append(pokemon.toPresentation)
+            }
+            
+            return result
         }
-        return try loadTestData()
     }
     
     func getPokemon(url: String) async throws -> PokemonDto {
-        let url = Bundle.main.url(forResource: "caterpie", withExtension: "json")!
-        let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode(PokemonDto.self, from: data)
+        if url == "https://pokeapi.co/api/v2/pokemon/25/" {
+            let url = Bundle.main.url(forResource: "pikachu", withExtension: "json")!
+            let data = try Data(contentsOf: url)
+            return try JSONDecoder().decode(PokemonDto.self, from: data)
+        } else {
+            let url = Bundle.main.url(forResource: "caterpie", withExtension: "json")!
+            let data = try Data(contentsOf: url)
+            return try JSONDecoder().decode(PokemonDto.self, from: data)
+        }
     }
 
-    func loadTestData() throws -> [Pokemon] {
-        let url = Bundle.main.url(forResource: "pokemonList", withExtension: "json")!
+    func loadTestData() throws -> PokemonListDto {
+        let url = Bundle.main.url(forResource: "pokemonListTest", withExtension: "json")!
         let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode([PokemonDto].self, from: data).map(\.toPresentation)
+        return try JSONDecoder().decode(PokemonListDto.self, from: data)
     }
     
     func getMoveDetail(urls: [URL?]) async throws -> [MoveDetail] {
