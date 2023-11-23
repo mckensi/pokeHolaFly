@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E06E33B2B0F07A6005F89C0 /* pokemonListTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E06E33A2B0F07A6005F89C0 /* pokemonListTest.json */; };
+		4E06E33D2B0F0AB6005F89C0 /* pikachu.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E06E33C2B0F0AB6005F89C0 /* pikachu.json */; };
 		4EB6EA452B098BD6000832D9 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA442B098BD6000832D9 /* BarView.swift */; };
 		4EB6EA482B0A67DF000832D9 /* SpeciesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA472B0A67DF000832D9 /* SpeciesInfoView.swift */; };
 		4EB6EA4C2B0A6B2D000832D9 /* TopImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6EA4B2B0A6B2D000832D9 /* TopImageView.swift */; };
@@ -41,7 +43,6 @@
 		8CB90D6C2B07FBAE00803C63 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB90D6B2B07FBAE00803C63 /* PokemonCell.swift */; };
 		8CB90D6E2B0812CE00803C63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB90D6D2B0812CE00803C63 /* Extensions.swift */; };
 		8CCEB2F22B07B7B5004026BE /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEB2F12B07B7B5004026BE /* DataTest.swift */; };
-		8CCEB2F42B07BA55004026BE /* pokemonList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEB2F32B07BA55004026BE /* pokemonList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		4E06E3392B0EEE24005F89C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4E06E33A2B0F07A6005F89C0 /* pokemonListTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemonListTest.json; sourceTree = "<group>"; };
+		4E06E33C2B0F0AB6005F89C0 /* pikachu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pikachu.json; sourceTree = "<group>"; };
 		4EB6EA442B098BD6000832D9 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BarView.swift; path = pokeHolaFly/View/Components/BarView.swift; sourceTree = SOURCE_ROOT; };
 		4EB6EA472B0A67DF000832D9 /* SpeciesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesInfoView.swift; sourceTree = "<group>"; };
 		4EB6EA4B2B0A6B2D000832D9 /* TopImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopImageView.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		8CB90D6B2B07FBAE00803C63 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		8CB90D6D2B0812CE00803C63 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8CCEB2F12B07B7B5004026BE /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
-		8CCEB2F32B07BA55004026BE /* pokemonList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemonList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +185,8 @@
 			children = (
 				4ED6D75F2B0ABFDD00CFCF2F /* caterpie-moves.json */,
 				4ED6D75D2B0ABB6D00CFCF2F /* caterpie.json */,
-				8CCEB2F32B07BA55004026BE /* pokemonList.json */,
+				4E06E33C2B0F0AB6005F89C0 /* pikachu.json */,
+				4E06E33A2B0F07A6005F89C0 /* pokemonListTest.json */,
 				8C1E38AF2B068D80002FDD0C /* Preview Assets.xcassets */,
 				8CCEB2F12B07B7B5004026BE /* DataTest.swift */,
 			);
@@ -393,7 +396,8 @@
 				8C1E38B02B068D80002FDD0C /* Preview Assets.xcassets in Resources */,
 				8C1E38AD2B068D80002FDD0C /* Assets.xcassets in Resources */,
 				4ED6D75E2B0ABB6D00CFCF2F /* caterpie.json in Resources */,
-				8CCEB2F42B07BA55004026BE /* pokemonList.json in Resources */,
+				4E06E33D2B0F0AB6005F89C0 /* pikachu.json in Resources */,
+				4E06E33B2B0F07A6005F89C0 /* pokemonListTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

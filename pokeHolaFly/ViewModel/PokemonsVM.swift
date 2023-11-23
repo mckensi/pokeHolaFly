@@ -19,7 +19,7 @@ final class PokemonsVM: ObservableObject {
     
     var currentOffset = 0
     
-    var subscribers = Set<AnyCancellable>()
+    private var subscribers = Set<AnyCancellable>()
     
     init(network: DataInteractor = Network()) {
         self.network = network
